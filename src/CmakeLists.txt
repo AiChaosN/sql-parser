@@ -1,0 +1,17 @@
+# 添加源文件
+file(GLOB SQL_PARSER_SRC
+    SQLParser.cpp
+    SQLParserResult.cpp
+    parser/*.cpp
+    util/*.cpp
+    sql/*.cpp
+)
+
+# 生成动态库
+add_library(sqlparser SHARED ${SQL_PARSER_SRC})
+
+# 添加头文件目录
+include_directories(sqlparser PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+include_directories(sqlparser PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/sql)
+include_directories(sqlparser PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/parser)
+include_directories(sqlparser PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/util)
