@@ -51,6 +51,7 @@ TEST(AutoQueryFileTest) {
     std::chrono::time_point<std::chrono::system_clock> start, end;
     start = std::chrono::system_clock::now();
 
+    //开始解析 SQL
     // Parse the query.
     hsql::SQLParserResult result;
     hsql::SQLParser::parse(query, &result);
